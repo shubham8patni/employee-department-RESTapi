@@ -1,0 +1,43 @@
+from flask import Flask, jsonify, render_template
+from connection import mydb
+
+mycursor = mydb.cursor()
+
+app = Flask(__name__)
+app.secret_key = "andhisnameisjohncena"
+
+@app.route("/")
+def home():
+    return  "Department Names : FINANCE, AUDIT, MARKETING, PRODUCTION"        #render_template("index.html")
+
+@app.route("/department/q=<name>")
+def listbydepartment(name):
+    valid = ["AUDIT", "MARKETING", "PRODUCTION", "FINANCE"]
+    if name not in valid:
+        ans = {
+            "output": "Invalid department name!"
+        }
+        ans = jsonify(ans)
+        return  ans
+        
+    query = "select * from employees where dep_id = (select dep_id from departments where dep_name = '"+ name +"')"
+    mycursor.execute(query)
+    result = mycursor.fetchall()
+    #print(result[0][0])
+    fin_ans = []
+    for i in result:
+    
+        ans = {
+            "employee_id" : i[0],
+            "employee_name": i[1],
+            "designation": i[2],
+            "salary": i[5]
+        }
+        fin_ans.append(ans)
+
+    ans = jsonify(fin_ans)
+    return ans
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
