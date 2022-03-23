@@ -17,6 +17,7 @@ mysql-connector==2.2.9
 mysqlclient==2.1.0
 passlib==1.7.4
 pipreqs==0.4.11
+psycopg2==2.9.3
 pycparser==2.21
 requests==2.27.1
 six==1.16.0
