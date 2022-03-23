@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, render_template
-from connection import mydb
+from connection1 import mydb
 
 mycursor = mydb.cursor()
 
