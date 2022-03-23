@@ -12,6 +12,9 @@ Home Page : https://employee-department-restapi.herokuapp.com/
 
 API call Examples :
 -http://employee-department-restapi.herokuapp.com/department/q=FINANCE
+
 -http://employee-department-restapi.herokuapp.com/department/q=AUDIT
+
 -http://employee-department-restapi.herokuapp.com/department/q=PRODUCTION
+
 -http://employee-department-restapi.herokuapp.com/department/q=MARKETING
