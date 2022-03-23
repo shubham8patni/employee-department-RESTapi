@@ -8,8 +8,32 @@
         {% endfor %}
     {% endif %}
   {% endwith %}
-  
-        <h2>Welcome</h2>
+    <div class="container pt-5">  
+        <h2>Welcome to Employee-Department REST-API !!</h2><br>
+        <h4>This API helps to search the list of employees and their details based on the name of their department.<br><br> The 4 departments whose employee details can be called through this API is as follows: <br>
+          <ul>
+            <li>FINANCE</li>
+            <li>AUDIT</li>
+            <li>PRODUCTION</li>
+            <li>MARKETING</li>
+          </ul>
+          <br>
+
+          URL to call the api : <br>
+          http://127.0.0.1:5000/department/q=department_name <br>
+          
+          Examples : 
+          <ul>
+            <li>http://127.0.0.1:5000/department/q=FINANCE</li>
+            <li>http://127.0.0.1:5000/department/q=AUDIT</li>
+            <li>http://127.0.0.1:5000/department/q=PRODUCTION</li>
+            <li>http://127.0.0.1:5000/department/q=MARKETING</li>
+          </ul>
+
+          <br>
+          <br>
+          OUTPUT/Response: The response of the queries will be in form of JSON.
+        </h4>
         <!-- {% for i in name %} <!-- This is the format to write python directly in html file in flask. -->
             <!-- {% if i == "mtech" %}
                 <p>course : {{i}}</p>
@@ -18,23 +42,6 @@
             {% endif %}
         {% endfor %} -->
 
-        <div class="container pt-5">
-          
-          <form action="#" method="post" style=" padding: 5%; ">
-              <div class="form-group">
-                <label for="exampleInputEmail1" class="pb-2">List of numbers (more than 1 number)</label>             
-                <input type="text" class="form-control" name='usr-list' placeholder="1,2,3,6,5,4" required>
-                <small id="emailHelp" class="form-text text-muted">We'll never share your details with anyone else.</small>
-              </div>
-              
-              <button type="submit" class="btn btn-primary mt-5">Submit</button>
-          </form>
-      </div>
-      <div class="container pt-5">
-        <div class="p-1">
-          <h3 class="text-center">Solution : {{solution}}</h3>
-        </div>
-        
       </div>
       <!-- {% if email %}
         <h2>Your Email is: {{email}}</h2>

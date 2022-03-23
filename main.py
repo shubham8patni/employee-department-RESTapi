@@ -8,11 +8,12 @@ app.secret_key = "andhisnameisjohncena"
 
 @app.route("/")
 def home():
-    return  "Department Names : FINANCE, AUDIT, MARKETING, PRODUCTION"        #render_template("index.html")
+    return render_template("index.html") #"Department Names : FINANCE, AUDIT, MARKETING, PRODUCTION"        
 
 @app.route("/department/q=<name>")
 def listbydepartment(name):
-    valid = ["AUDIT", "MARKETING", "PRODUCTION", "FINANCE"]
+    valid = ["AUDIT", "MARKETING", "PRODUCTION", "FINANCE", "audit", "marketing", "production", "finance" ]
+    name = name.upper()
     if name not in valid:
         ans = {
             "output": "Invalid department name!"
