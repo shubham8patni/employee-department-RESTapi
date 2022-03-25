@@ -1,5 +1,4 @@
 from flask import Flask, jsonify, render_template,request
-from sympy import re
 from connection1 import mydb
 
 mycursor = mydb.cursor()
@@ -11,7 +10,7 @@ app.secret_key = "andhisnameisjohncena"
 def home():
     return render_template("index.html") #"Department Names : FINANCE, AUDIT, MARKETING, PRODUCTION"        
 
-@app.route("/department/q=<name>", methods=["POST", ["GET"]])
+@app.route("/department/q=<name>", methods=["POST", "GET"])
 def listbydepartment(name):
     if request.method == "GET":
         valid = ["AUDIT", "MARKETING", "PRODUCTION", "FINANCE", "audit", "marketing", "production", "finance" ]
@@ -41,7 +40,7 @@ def listbydepartment(name):
         ans = jsonify(fin_ans)
         return ans
     elif request.method=="POST":
-        print(name.json())
+        return name.json()
 
 if __name__ == "__main__":
     app.run(debug=True)
