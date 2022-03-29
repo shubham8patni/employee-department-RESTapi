@@ -96,8 +96,7 @@ def listbydepartment(name):
 
 @app.route("/department", methods=["GET"])
 def listdepartment():
-    if request.method == "GET":
-            
+    if request.method == "GET":            
         query = "select * from employees order by dep_id ASC"
         mycursor.execute(query)
         result = mycursor.fetchall()
