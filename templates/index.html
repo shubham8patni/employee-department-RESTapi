@@ -10,17 +10,22 @@
   {% endwith %}
     <div class="container pt-5">  
         <h2>Welcome to Employee-Department REST-API !!</h2><br>
-        <h4>This API helps to search the list of employees and their details based on the name of their department and create new employee entries.<br><br> The 4 departments whose employee details can be called through this API is as follows: <br>
+        <h4>This API helps to search the list of employees and their details based on the name of their department and create new employee entries.<br><br> 
+          
+          <br>
+          <u><b>GET call:</b></u>
+          <br><br>
+          The 4 departments whose employee details can be called through this API is as follows: <br>
           <ul>
             <li>FINANCE</li>
             <li>AUDIT</li>
             <li>PRODUCTION</li>
             <li>MARKETING</li>
           </ul>
-          <br>
+          
 
           URL to call the api : <br>
-          http://employee-department-restapi.herokuapp.com/department/q=department_name <br>
+          http://employee-department-restapi.herokuapp.com/department/q=department_name <br><br>
           
           Examples : 
           <ul>
@@ -31,8 +36,27 @@
           </ul>
 
           <br>
-          <br>
+          
           OUTPUT/Response: The response of the queries will be in form of JSON.
+
+          <br><br><br>
+          <u><b>POST call:</b></u>
+          <br><br>
+          URL to call the api : <br>
+          http://employee-department-restapi.herokuapp.com/create
+          <br><br>
+          Post data to be sent in JSON format with the following fields given in example below:
+          <br>          
+            create = {
+                "employee_id" : "7004",
+                "employee_name": "Bruce" ,
+                "designation": "salesman",
+                "salary": "65024",
+                "manager_id" : "68139",
+                "hire_date" : "18-5-21",
+                "department_name" : "Production/Audit/Finance/Marketing"
+            }
+
         </h4>
         <!-- {% for i in name %} <!-- This is the format to write python directly in html file in flask. -->
             <!-- {% if i == "mtech" %}
